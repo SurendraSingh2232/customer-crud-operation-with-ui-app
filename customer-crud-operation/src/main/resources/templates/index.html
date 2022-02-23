@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<button><a href="/customers">Add Customer</a></button>
+<table border="2px">
+	<thead>
+	<tr>
+		<th>Id</th>
+		<th>FirstName</th>
+		<th>LastName</th>
+		<th>Email</th>
+		<th>Mobile</th>
+		<th>Gender</th>
+		<th>Action</th>
+	</tr>
+
+	</thead>
+	<tbody>
+	<tr th:each="customer:${customers}">
+
+		<td th:text="${customer.getId}"></td>
+		<td th:text="${customer.getFirstName}"></td>
+		<td th:text="${customer.getLastName}"></td>
+		<td th:text="${customer.getEmail}"></td>
+		<td th:text="${customer.getMobile}"></td>
+		<td th:text="${customer.getGender}"></td>
+
+		<td>
+			<button>
+				<a th:href="@{/customers/{id} (id=${customer.id})}">Edit</a>
+			</button>
+		</td>
+
+		<td>
+			<button>
+				<a th:href="@{/customers/delete/{id} (id=${customer.id})}">delete</a>
+			</button>
+		</td>
+
+	</tr>
+	</tbody>
+</table>
+
+</body>
+</html>

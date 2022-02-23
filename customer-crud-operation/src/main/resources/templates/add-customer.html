@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <h1>
+        Customer-crud-operation
+    </h1>
+
+</head>
+<body>
+<form method="POST" th:action="@{/customers}" th:object="${customer}">
+    <label>ID</label>
+    <input type="text"  th:field="*{id}" readonly> <br><br>
+
+    <label>First Name</label>
+    <input type="text" name="firstName" th:field="${customer.firstName}"> <br><br>
+
+    <label>Last Name</label>
+    <input type="text" name="lastName" th:field="${customer.lastName}"> <br><br>
+
+    <label>Email</label>
+    <input type="text" name="email" th:field="${customer.email}"> <br><br>
+
+    <label>Mobile</label>
+    <input type="text" name="mobile" th:field="${customer.mobile}"> <br><br>
+
+    <label>Gender</label>
+    <input type="text" name="gender" th:field="${customer.gender}"> <br><br>
+
+
+    <input type="submit" name="save" align="right"> <br>
+</form>
+</body>
+</html>
